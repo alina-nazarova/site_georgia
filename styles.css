@@ -148,7 +148,6 @@ h2, h3 {
 }
 
 .audio {
-  padding-left: 95px;
   padding-top: 40px;
   display: flex;
   align-items: center;
@@ -192,6 +191,10 @@ iframe {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+.table tr {
+  word-break: break-all;
 }
 
 .section_table_1 {
