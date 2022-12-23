@@ -205,6 +205,28 @@
         </ul>
     </section>
 
+    <section class="forma">
+        <section class="name">  
+        <label for="fname">Ваше имя</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        </section>
+    
+        <section class="lastname">
+        <label for="lname">Ваша фамилия</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        </section>
+        
+        <section class="text">
+        <label for="subject">Текст</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        </section>  
+
+        <section>
+            <input type="button" onclick="submitForm();" value="Отправить">
+            <input type="button" onclick="clearForm();" value="Очистить">
+        </section>
+    </section>
+
 </section>
 
 <footer>
@@ -218,6 +240,39 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2214.0896004445885!2d44.01138664011894!3d56.29376609571845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4151d50fc5c4d0ef%3A0xc850164e358ddca9!2z0YPQuy4g0JzQvtGF0L7QstCw0Y8sINCd0LjQttC90LjQuSDQndC-0LLQs9C-0YDQvtC0LCDQndC40LbQtdCz0L7RgNC-0LTRgdC60LDRjyDQvtCx0LsuLCA2MDMxNDY!5e0!3m2!1sru!2sru!4v1667146176682!5m2!1sru!2sru" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 </footer>
+
+<script>
+    let nameInput = document.querySelector('#fname');
+    let lastNameInput = document.querySelector('#lname');
+    let subjectInput = document.querySelector('#subject');
+
+    nameInput.value = localStorage.getItem('fname');
+    lastNameInput.value = localStorage.getItem('lname');
+    subjectInput.value = localStorage.getItem('subject');
+
+    nameInput.oninput = function() {
+      localStorage.setItem('fname', nameInput.value);
+    };
+    lastNameInput.oninput = function() {
+      localStorage.setItem('lname', lastNameInput.value);
+    };
+    subjectInput.oninput = function() {
+      localStorage.setItem('subject', subjectInput.value);
+    };
+
+    function clearForm() {
+        nameInput.value = "";
+        lastNameInput.value = "";
+        subjectInput.value = "";
+
+        localStorage.clear();
+    }
+
+    function submitForm() {
+        alert('Отправлено');
+        clearForm();
+    }
+</script>
 
 </body>
 </html>

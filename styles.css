@@ -504,6 +504,28 @@ footer {
   width: 24%;
 }
 
+.forma {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.forma label {
+  display: block;
+}
+
+.name {
+  padding-bottom: 10px;
+}
+
+.lastname {
+  padding-bottom: 10px;
+}
+
+.text {
+  padding-bottom: 10px;
+}
+
 .map iframe {
   width: 100%;
 }
