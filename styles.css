@@ -496,6 +496,10 @@ footer {
   padding-right: 10px;
 }
 
+#map {
+  height: 300px;
+}
+
 .contacts {
   padding-left: 20px;
   display: flex;
